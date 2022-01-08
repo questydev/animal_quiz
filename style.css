@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /*background: linear-gradient(to bottom, white, #46daff); */
+  background-color: #a8dfff;
+  height: 100vh;
+  width: 100vw;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  overflow: hidden;
+}
+
+.header {
+  z-index: 50;
+  background: linear-gradient(
+    0deg,
+    rgba(9, 80, 122, 1) 0%,
+    rgba(156, 110, 255, 1) 100%
+  );
+  height: 100vh;
+  max-height: 100vh;
+  width: 35vw;
+  padding-left: 10px;
+  padding-right: 50px;
+  /*box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 20% 90% 0;
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.wordHighlight {
+  color: orange;
+}
+
+.scoreboard {
+  z-index: 10;
+  position: fixed;
+  background: #1fa0b1;
+  color: white;
+  height: 60px;
+  width: 80px;
+  top: 0px;
+  right: 50px;
+  border-radius: 0 0 8px 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+.scoreboard span {
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 0;
+}
+
+.maincontainer {
+  z-index: 5;
+  width: 100vw;
+  height: 84vh;
+  max-width: 1380px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 10px 0px 10px;
+}
+
+.aniCard {
+  z-index: 5;
+  position: relative;
+  width: 100%;
+  height: 38vh;
+  flex: 45%;
+  min-height: 300px;
+  max-width: 540px;
+  transition: all 0.2s ease-in-out;
+  margin: 5px;
+}
+
+.aniCardBG {
+  z-index: 0;
+  border-radius: 10px;
+  background-color: white;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  border: 5px solid white;
+}
+
+.aniCardHover:hover {
+  cursor: pointer;
+  filter: brightness(150%);
+}
+
+.aniCardHover:active {
+  filter: brightness(30%);
+}
+
+.aniCardDisabled {
+  filter: brightness(30%);
+}
+
+.feedback {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 10;
+  height: 80px;
+  width: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 4rem;
+  font-weight: bold;
+  border-radius: 50px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.correct {
+  background: linear-gradient(to bottom, rgb(128, 212, 32), #b2f55c, #00800b);
+}
+
+.incorrect {
+  background: linear-gradient(to bottom, rgb(212, 32, 32), #f55c5c, #800000);
+}
+
+@media all and (max-width: 812px) {
+  /* For mobile phones: */
+
+  body {
+    flex-direction: column;
+  }
+
+  .header {
+    height: 16vh;
+    max-height: 200px;
+    width: 100vw;
+    /*box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 0 0 0 0;
+  }
+
+  .header {
+    font-size: 2rem;
+    min-height: 15vh;
+  }
+
+  .aniCard {
+    min-height: 35vh;
+    max-height: 35vh;
+    min-width: 45vw;
+    max-width: 45vw;
+  }
+
+  .scoreboard {
+    top: calc(100% - 60px);
+    left: 10px;
+    color: black;
+    background-color: white;
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+@media all and (max-width: 666px) {
+  /* For mobile phones: */
+
+  body {
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .header {
+    font-size: 1.5rem !important;
+    height: 10vh !important;
+    min-height: 10vh !important;
+    max-height: 10vh;
+  }
+
+  .maincontainer {
+    z-index: 5;
+    width: 100vw;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    flex-wrap: nowrap;
+    gap: 0px;
+    padding: 0px 0px 0px 0px;
+  }
+
+  .aniCard {
+    position: relative;
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+    border-radius: 0px !important;
+    flex: 40%;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 540px;
+    min-height: 22.5vh !important;
+    max-height: 22.5vh !important;
+    border: 0px solid white;
+    margin: 0px;
+    border-top: 2px solid white;
+  }
+
+  .aniCardBG {
+    position: relative;
+    background-color: white;
+    background-position: center;
+    background-size: cover;
+    border-radius: 0px !important;
+    flex: 40%;
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 540px;
+    min-height: 22.5vh !important;
+    max-height: 22.5vh !important;
+    border: 0px solid white;
+    margin: 0px;
+    border-top: 2px solid white;
+  }
+}
